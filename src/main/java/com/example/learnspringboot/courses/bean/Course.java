@@ -15,6 +15,10 @@ public class Course {
 	private String name;
 	private String author;
 	
+	public Course() {
+		
+	}
+	
 	public Course(long id, String name, String author) {
 		super();
 		this.id = id;
