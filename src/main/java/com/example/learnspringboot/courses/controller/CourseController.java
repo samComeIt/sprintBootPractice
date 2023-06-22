@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.learnspringboot.courses.bean.Course;
@@ -36,6 +38,11 @@ public class CourseController {
 			throw new RuntimeException("Course not found with id: " + id);
 		}
 		return course.get();
+	}
+	
+	@PostMapping("/course")
+	public void createCourse(@RequestBody Course course) {
+		repository.save(course);
 	}
 	
 	
